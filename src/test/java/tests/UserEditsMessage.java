@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.Steps;
 import org.joda.time.DateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import step.WebUserLoginSteps;
+import step.WebUserSteps;
 
 @RunWith(SerenityRunner.class)
 public class UserEditsMessage extends TestBase {
@@ -16,16 +16,16 @@ public class UserEditsMessage extends TestBase {
     private static final String newMessage = "This is new message" + DateTime.now().getMillis();
 
     @Steps
-    WebUserLoginSteps webUser;
+    WebUserSteps webUser;
 
     @Test
     public void userEditsMessage() {
         webUser.signs_in(login, password);
-        webUser.finds_himself_on_the_main_page();
-        webUser.creates_new_conversation_with(user);
-        webUser.sends_message(message);
-        webUser.edits_his_message(message, newMessage);
-        webUser.asserts_that_message_is_displayed_on_feed(newMessage);
+        webUser.is_on_the_main_page();
+        webUser.create_new_conversation_with(user);
+        webUser.send_message(message);
+        webUser.edit_message(message, newMessage);
+        webUser.check_if_message_is_displayed_on_feed(newMessage);
     }
 
 

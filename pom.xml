@@ -12,7 +12,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>1.6.0</serenity.version>
         <serenity.maven.version>1.6.0</serenity.maven.version>
-        <!--<webdriver.driver>firefox</webdriver.driver>-->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -28,7 +27,6 @@
             <artifactId>selenium-firefox-driver</artifactId>
             <version>3.4.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
@@ -65,11 +63,6 @@
             <artifactId>assertj-core</artifactId>
             <version>1.7.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-junit</artifactId>
-            <version>1.6.0</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>

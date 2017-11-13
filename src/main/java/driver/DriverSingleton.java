@@ -16,10 +16,6 @@ public class DriverSingleton {
     private DriverSingleton() {
     }
 
-    public static void setDriver(String driverType) {
-        DriverSingleton.driverType = driverType;
-    }
-
     public static WebDriver getDriver() {
         if (driver == null) {
 
@@ -33,6 +29,7 @@ public class DriverSingleton {
                     driver = new ChromeDriver();
                     break;
                 default:
+                    System.setProperty("webdriver.gecko.driver", DriverConfig.geckodriver());
                     driver = new FirefoxDriver();
                     break;
             }
