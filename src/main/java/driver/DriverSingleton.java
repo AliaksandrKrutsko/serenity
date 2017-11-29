@@ -19,12 +19,12 @@ public class DriverSingleton {
     public static WebDriver getDriver() {
         if (driver == null) {
 
-            switch (driverType.toUpperCase()) {
-                case "FIREFOX":
+            switch (driverType) {
+                case "firefox":
                     System.setProperty("webdriver.gecko.driver", DriverConfig.geckodriver());
                     driver = new FirefoxDriver();
                     break;
-                case "CHROME":
+                case "chrome":
                     System.setProperty("webdriver.chrome.driver", DriverConfig.chromedriver());
                     driver = new ChromeDriver();
                     break;

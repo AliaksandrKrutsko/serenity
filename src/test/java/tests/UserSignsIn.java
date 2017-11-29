@@ -11,9 +11,6 @@ import step.*;
 @RunWith(SerenityRunner.class)
 public class UserSignsIn extends TestBase {
 
-    private static final String login = DriverConfig.login();
-    private static final String password = DriverConfig.password();
-
     @Steps
     WebUserSteps webUser;
 

@@ -1,53 +1,39 @@
 package helper;
 
+import org.openqa.selenium.remote.BrowserType;
+
 import java.io.InputStream;
 import java.util.Properties;
 
 public class DriverConfig {
 
-    private static Properties config = new Properties();
-    private static InputStream is = DriverConfig.class.getResourceAsStream("/DriverConfig.properties");
-
-    static {
-        try {
-            config.load(is);
-        } catch (Exception e) {
-            System.out.println("Error reading from property file");
-        }
-    }
 
     public static String browser() {
-        return config.getProperty("browser");
+        return Props.BROWSER.get();
     }
 
     public static String geckodriver() {
-        return config.getProperty("geckodriver");
+        return Props.GECKODRIVER.get();
     }
 
     public static String chromedriver() {
-        return config.getProperty("chromedriver");
+        return Props.CHROMEDRIVER.get();
     }
 
     public static String login() {
-        return config.getProperty("login");
+        return Props.LOGIN.get();
     }
 
     public static String user() {
-        return config.getProperty("user");
+        return Props.USER.get();
     }
 
     public static String password() {
-        return config.getProperty("password");
+        return Props.PASSWORD.get();
     }
 
     public static int timeout() {
-        int result = 15;
-        try {
-            result = Integer.parseInt(config.getProperty("timeOut"));
-        } catch (NumberFormatException e) {
-            //todo logging
-        }
-        return result;
+        return Integer.parseInt(Props.TIMEOUT.get());
     }
 
 }
