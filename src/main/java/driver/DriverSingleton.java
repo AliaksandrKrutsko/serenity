@@ -1,6 +1,7 @@
 package driver;
 
 import helper.DriverConfig;
+import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,7 +19,6 @@ public class DriverSingleton {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-
             switch (driverType) {
                 case "firefox":
                     System.setProperty("webdriver.gecko.driver", DriverConfig.geckodriver());
@@ -33,11 +33,6 @@ public class DriverSingleton {
                     driver = new FirefoxDriver();
                     break;
             }
-
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(DriverConfig.timeout(), TimeUnit.SECONDS);
-            driver.manage().timeouts().pageLoadTimeout(DriverConfig.timeout(), TimeUnit.SECONDS);
-            driver.manage().timeouts().setScriptTimeout(DriverConfig.timeout(), TimeUnit.SECONDS);
         }
         return driver;
     }

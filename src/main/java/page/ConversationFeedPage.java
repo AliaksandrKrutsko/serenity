@@ -55,7 +55,7 @@ public class ConversationFeedPage extends PageObject {
     }
 
     public ConversationFeedPage findMessage(String message) {
-        WebElement messageXpath = getDriver().findElement(By.xpath("//div[@class='message-wrapper']/div/span[contains(text(), '"+message+"')]"));
+        WebElement messageXpath = $("//div[@class='message-wrapper']/div/span[contains(text(), '"+message+"')]");
         assertTrue(messageXpath.isDisplayed());
         return this;
     }

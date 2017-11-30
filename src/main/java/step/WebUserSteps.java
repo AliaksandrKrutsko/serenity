@@ -10,12 +10,12 @@ public class WebUserSteps {
 
     protected WebDriver driver = DriverSingleton.getDriver();
 
-    MainPage mainPage = new MainPage(driver);
-    NewConversationPage newConversationPage = new NewConversationPage(driver);
-    ConversationFeedPage conversationFeedPage = new ConversationFeedPage(driver);
-    ConversationSelectorPage conversationSelectorPage = new ConversationSelectorPage(driver);
-    LoginEmailPage loginEmailPage = new LoginEmailPage(driver);
-    LoginPasswordPage loginPasswordPage = new LoginPasswordPage(driver);
+    protected LoginEmailPage loginEmailPage = new LoginEmailPage(driver);
+    private MainPage mainPage = new MainPage(driver);
+    private NewConversationPage newConversationPage = new NewConversationPage(driver);
+    private ConversationFeedPage conversationFeedPage = new ConversationFeedPage(driver);
+    private ConversationSelectorPage conversationSelectorPage = new ConversationSelectorPage(driver);
+    private LoginPasswordPage loginPasswordPage = new LoginPasswordPage(driver);
 
     @Step("User finds himself on the main page")
     public void is_on_the_main_page() {
@@ -78,7 +78,6 @@ public class WebUserSteps {
 
     @Step("User signs in")
     public void signs_in(String login, String password) {
-        loginEmailPage.open();
         loginEmailPage
                 .waitForTitleText()
                 .enterLogin(login)
