@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,6 +19,7 @@ import static driver.DriverSingleton.getDriver;
 
 @DefaultUrl("https://10.6.238.222")
 public class LoginEmailPage extends PageObject {
+
 
     @FindBy(xpath = "//input[@id='id_loginViewEmail']")
     private WebElement emailField;

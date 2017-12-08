@@ -12,12 +12,6 @@ public class TestBase extends WebUserSteps {
     protected static final String password = DriverConfig.password();
     protected static final String user = DriverConfig.user();
 
-    @Before
-    public void setUp() {
-        loginEmailPage.setImplicitTimeout(DriverConfig.timeout(), TimeUnit.SECONDS);
-        loginEmailPage.open();
-        driver.manage().window().maximize();
-    }
 
     @After
     public void teardown() {

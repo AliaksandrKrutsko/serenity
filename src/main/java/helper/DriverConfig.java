@@ -7,7 +7,6 @@ import java.util.Properties;
 
 public class DriverConfig {
 
-
     public static String browser() {
         return Props.BROWSER.get();
     }

@@ -78,6 +78,7 @@ public class WebUserSteps {
 
     @Step("User signs in")
     public void signs_in(String login, String password) {
+        loginEmailPage.open();;
         loginEmailPage
                 .waitForTitleText()
                 .enterLogin(login)
