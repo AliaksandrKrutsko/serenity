@@ -6,7 +6,7 @@ import org.junit.Before;
 import step.WebUserSteps;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase extends WebUserSteps {
+public class TestBase {
 
     protected static final String login = DriverConfig.login();
     protected static final String password = DriverConfig.password();
